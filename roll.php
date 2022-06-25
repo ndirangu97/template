@@ -196,7 +196,7 @@
     }
     //handle results from the server
     const handleResult = (results) => {
-        // alert(results)
+        alert(results)
         var info = JSON.parse(results);
 
         switch (info.type) {
@@ -231,6 +231,6 @@
     }
 
     function getprint() {
-        window.open('printroll.php')
+       window.open('download.php','printpage','popup')
     }
 </script>

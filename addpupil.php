@@ -99,13 +99,13 @@
             <div style="margin-bottom: 16px;">
               <input type="radio" id="male" name="gender" value="Male">
               <label for="male">Male</label><br>
-              <input type="radio" id="female" name="gender" value="Female">
+              <input type="radio" id="female"  name="gender" value="Female">
               <label for="female">Female</label><br>
             </div>
             Disability:
             <span id="dErr"></span>
             <div style="margin-bottom: 16px;">
-              <input type="radio" id="no" name="disability" value="No">
+              <input type="radio" id="no" checked name="disability" value="No">
               <label for="no">No</label><br>
               <input type="radio" id="yes" name="disability" value="Yes">
               <label for="yes">Yes</label><br>
@@ -133,6 +133,8 @@
                 <label for="stream">Stream: </label>
                 <span id="sErr"></span>
                 <select name="stream" id="stream" style="width: 80px;border: 1px solid #7c7cff ;border-radius: 4px;">
+                <option value="E">E</option>
+                <option value="T">T</option>
                 <option value="R">R</option>
                 <option value="J">J</option>
                 <option value="L">L</option>
@@ -142,7 +144,7 @@
                   <option value="C">C</option>
                   <option value="T">T</option>
                   
-                  <option value="E">E</option>
+                 
 
                 </select>
               </div>
@@ -164,7 +166,7 @@
               <div style="display: flex;">
                 <p>Guardian Phone:</p>
                 <input style="margin-bottom: 10px;padding-left:20px;border-radius:6px;margin-left: 20px" class="input"
-                  type="text" placeholder="Guardian Phone" name="g1no" id="" required min="3">
+                  type="text" placeholder="Guardian Phone" value="07" name="g1no" id="" required min="3">
               </div>
               <div style="margin-left: 20px;">
                 <label for="stream">Role: </label>
