@@ -98,7 +98,7 @@ $pg=$_GET['pg'];
               ";
             }
           } else {
-            echo "No transferre yet inserted into the database";
+            echo "No transferre ";
           } ?>
 
 

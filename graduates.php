@@ -98,7 +98,7 @@ $pg=$_GET['pg'];
               ";
             }
           } else {
-            echo "No graduates yet inserted into the database";
+            echo "No graduates ";
           } ?>
 
 

@@ -129,29 +129,41 @@ $pimage = $resultSql->img;
                         </div>
                         <div class="rightContainer " style="flex-basis: 70%;display:flex;flex-direction:column;height:100%;position:relative">
                             <div style="display: flex; justify-content: center; align-items: center;flex-basis:10%;">
-                                <h3 style="margin-top: 45px;margin-bottom:30px">Pupils Bio</h3>
+                                <h3 style="margin-top: 25px;margin-bottom:30px">Pupils Bio</h3>
                             </div>
-                            <div style="width: 100%; display: flex; align-items:center; flex-basis:90%;flex-direction:column;padding-top:30px">
+                            <div style="width: 100%; display: flex; align-items:center; flex-basis:90%;flex-direction:column;padding-top:10px">
+                                <?php
 
-                                <div class="card" style="display: flex;width:80%;height:60px;flex-direction:row;align-items:center;margin-bottom:20px;">
+                                if ($resultSql->transferred == '1') {
+                                    echo "
+                                        
+                                        <div class='card' style='display: flex;width:80%;height:50px;flex-direction:row;align-items:center;margin-bottom:10px;'>
+                                    <p style='font-size:20px;margin-right:40px;margin-left:20px;color:#7c7cff'><b>Transferred</b></p>
+                                    <p style='font-size:20px;color:red'>$resultSql->yeartransferred </p>
+                                </div>
+                                        ";
+                                }
+                                ?>
+
+                                <div class="card" style="display: flex;width:80%;height:50px;flex-direction:row;align-items:center;margin-bottom:10px;">
                                     <p style="font-size:20px;margin-right:120px;margin-left:20px;color:#7c7cff"><b>Name</b></p>
                                     <p style="font-size:20px"> <?php echo $resultSql->name ?></p>
                                 </div>
-                                <div class="card" style="display: flex;width:80%;height:60px;flex-direction:row;align-items:center;margin-bottom:20px">
+                                <div class="card" style="display: flex;width:80%;height:50px;flex-direction:row;align-items:center;margin-bottom:10px">
                                     <p style="font-size:20px;margin-right:120px;margin-left:20px;color:#7c7cff"><b>UPI NO.</b></p>
                                     <p style="font-size:20px"> <?php echo $resultSql->upi ?></p>
                                 </div>
-                                <div class="card" style="display: flex;width:80%;height:60px;flex-direction:row;align-items:center;margin-bottom:20px">
+                                <div class="card" style="display: flex;width:80%;height:50px;flex-direction:row;align-items:center;margin-bottom:10px">
                                     <p style="font-size:20px;margin-right:130px;margin-left:20px;color:#7c7cff"><b>Class</b></p>
                                     <p style="font-size:20px"> <?php echo $resultSql->class ?> <?php echo $resultSql->stream ?></p>
                                 </div>
-                                <div class="card" style="display: flex;width:80%;height:60px;flex-direction:row;align-items:center;margin-bottom:20px">
+                                <div class="card" style="display: flex;width:80%;height:50px;flex-direction:row;align-items:center;margin-bottom:10px">
                                     <p style="font-size:20px;margin-right:100px;margin-left:20px;color:#7c7cff"><b>Gender</b></p>
                                     <p style="font-size:20px"> <?php echo $resultSql->gender ?> </p>
                                 </div>
                                 <?php
                                 if ($resultSql->disabled == "Yes") {
-                                    echo " <div class='card' style='display: flex;width:80%;height:60px;flex-direction:row;align-items:center;'> <p style='font-size:20px;margin-right:80px;margin-left:20px;color:#7c7cff'><b>Disability</b></p> <p style='font-size:20px'> $resultSql->disabled   </p></div>";
+                                    echo " <div class='card' style='display: flex;width:80%;height:50px;flex-direction:row;align-items:center;'> <p style='font-size:20px;margin-right:80px;margin-left:20px;color:#7c7cff'><b>Disability</b></p> <p style='font-size:20px'> $resultSql->disabled   </p></div>";
                                 }
 
                                 ?>
@@ -161,14 +173,24 @@ $pimage = $resultSql->img;
                             <div style="position: absolute; right:20px;top:50px;cursor:pointer;color:red" onclick="document.getElementById('dtmodal').style.display='none'">X</div>
 
                             <div id="dtmodal" style="height: 200px;width:200px;background:#ffffff;position: absolute; right:40px;top:20px;border:1px solid #9999;flex-direction:column;align-items:center;justify-content:center;display:none;">
-
+                                <?php
+                                if ($resultSql->transferred == '0' && $resultSql->graduated == '0') {
+                                    echo '
+                                    
                                 <div onclick="window.location=`./addpupilimage2.php?id=${ownid}`" class="t" style="width:100%;height:50px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:1.5s;border-bottom:1px solid  #9999;position:relative">Add Image
 
                                 </div>
                                 <div class="t" onclick="window.location=`./addpupil2.php?id=${ownid}`" style="width:100%;height:50px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:1.5s;border-bottom:1px solid  #9999 ">Edit Bio</div>
                                 <div onclick="transferOpen()" class="t" style="width:100%;height:50px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:1.5s;border-bottom:1px solid  #9999">Change Class</div>
                                 <div onclick="leave()" class="t" style="width:100%;height:50px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:1.5s;border-bottom:1px solid  #9999">Transfer School</div>
+                                
+
+                                    ';
+                                }
+
+                                ?>
                                 <div class="d" onclick="dels()" style="width:100%;height:50px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:1.5s;border-bottom:1px solid  #9999">Delete pupil</div>
+
 
 
                             </div>
@@ -181,12 +203,12 @@ $pimage = $resultSql->img;
                           
                             ">
                                 <div class="mparent">
-                                    <div style=" position: absolute;
+                                    <div  onclick="closem()" style=" position: absolute;
                             height: 30px;
                             width: 30px;
                             right: 10px;
                             cursor: pointer;
-                            top: 10px;"><img src="./images/close.png" onclick="closem()" alt=""></div>
+                            top: 10px;color:red">X</div>
                                     <div style="display: flex;flex-direction:column;align-items:center;margin-bottom:40px;margin-top:30px;">
 
 
@@ -198,6 +220,7 @@ $pimage = $resultSql->img;
 
                                     <div style="display: flex;justify-content:center">
 
+                                    
                                         <div>
 
                                             <label for="class">Class: </label>
@@ -244,15 +267,14 @@ $pimage = $resultSql->img;
 
                         <div style="flex-basis: 45%;height: 60%;border:1px solid #11ad11;border-radius: 8px;flex-direction: column;justify-content: center;align-items: center;display:flex">
 
-                              
+
                             <div style="display: flex;">
                                 <p>Guardian Name:</p>
                                 <input style="margin-bottom: 10px;padding-left:20px;border-radius:6px;margin-left: 20px;" class="input" type="text" placeholder="Guardian Name" value="<?php echo $resultSql->gname ?>" name="g1name" id="" required min="3">
                             </div>
                             <div style="display: flex;">
                                 <p>Guardian Phone:</p>
-                                <input style="margin-bottom: 10px;padding-left:20px;border-radius:6px;margin-left: 20px" class="input"
-                                value="<?php echo $resultSql->gno ?>"  type="text" placeholder="Guardian Phone" name="g1no" id="" required min="3">
+                                <input style="margin-bottom: 10px;padding-left:20px;border-radius:6px;margin-left: 20px" class="input" value="<?php echo $resultSql->gno ?>" type="text" placeholder="Guardian Phone" name="g1no" id="" required min="3">
                             </div>
                             <div style="margin-left: 20px;">
                                 <label for="stream">Role: </label>
@@ -268,18 +290,14 @@ $pimage = $resultSql->img;
                         </div>
                         <div style="flex-basis: 45%;height: 60%;border:1px solid #11ad11;border-radius: 8px;flex-direction: column;justify-content: center;align-items: center;display:flex">
 
-                              
+
                             <div style="display: flex;">
                                 <p>Guardian Name:</p>
-                                <input style="margin-bottom: 10px;padding-left:20px;border-radius:6px;margin-left: 20px;" class="input" 
-                                value="<?php echo $resultSql->g2name ?>" 
-                                type="text" placeholder="Guardian Name" name="g1name" id="" required min="3">
+                                <input style="margin-bottom: 10px;padding-left:20px;border-radius:6px;margin-left: 20px;" class="input" value="<?php echo $resultSql->g2name ?>" type="text" placeholder="Guardian Name" name="g1name" id="" required min="3">
                             </div>
                             <div style="display: flex;">
                                 <p>Guardian Phone:</p>
-                                <input style="margin-bottom: 10px;padding-left:20px;border-radius:6px;margin-left: 20px" 
-                                value="<?php echo $resultSql->g2no ?>" 
-                                class="input" type="text" placeholder="Guardian Phone" name="g1no" id="" required min="3">
+                                <input style="margin-bottom: 10px;padding-left:20px;border-radius:6px;margin-left: 20px" value="<?php echo $resultSql->g2no ?>" class="input" type="text" placeholder="Guardian Phone" name="g1no" id="" required min="3">
                             </div>
                             <div style="margin-left: 20px;">
                                 <label for="stream">Role: </label>
@@ -293,7 +311,7 @@ $pimage = $resultSql->img;
                                 </select>
                             </div>
                         </div>
-                        
+
                     </div>
                     <input type="text" style="display:none ;" id="ginput" value="<?php echo ($id); ?>" id="">
 
@@ -434,18 +452,20 @@ $pimage = $resultSql->img;
             }, 'leave')
         }
     }
+
     function bio() {
-        let b=document.getElementById('bio')
-        let g=document.getElementById('guard')
+        let b = document.getElementById('bio')
+        let g = document.getElementById('guard')
 
-        b.style.display='flex'
-        g.style.display='none'
+        b.style.display = 'flex'
+        g.style.display = 'none'
     }
-    function guard() {
-        let b=document.getElementById('bio')
-        let g=document.getElementById('guard')
 
-        b.style.display='none'
-        g.style.display='flex'
+    function guard() {
+        let b = document.getElementById('bio')
+        let g = document.getElementById('guard')
+
+        b.style.display = 'none'
+        g.style.display = 'flex'
     }
 </script>

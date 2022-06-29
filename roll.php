@@ -231,6 +231,8 @@
     }
 
     function getprint() {
-       window.open('download.php','printpage','popup')
+        let c=document.getElementById('class').value
+        let s=document.getElementById('stream').value
+       window.open(`download.php?class=${c}&stream=${s}`,'printpage')
     }
 </script>
