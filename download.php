@@ -148,7 +148,7 @@ $a="
 
       <!-- partial -->
       <div  style='height:100vh;width:100%;overflow:auto;display:flex;flex-direction:column;align-items:center;'>
-        <h3>NGEYA PRIMARY ACCOUNT ACTIVITY</h3>
+        <h3>MILIMANI PRIMARY CLASS $c $s</h3>
         <div style='display:flex;justify-content:center;align-items:center;'>
           <h5>27TH JUne 2022</h5>
         </div>

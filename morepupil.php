@@ -132,6 +132,18 @@ $pimage = $resultSql->img;
                                 <h3 style="margin-top: 25px;margin-bottom:30px">Pupils Bio</h3>
                             </div>
                             <div style="width: 100%; display: flex; align-items:center; flex-basis:90%;flex-direction:column;padding-top:10px">
+                            <?php
+
+                                if ($resultSql->graduated == '1') {
+                                    echo "
+                                        
+                                        <div class='card' style='display: flex;width:80%;height:50px;flex-direction:row;align-items:center;margin-bottom:10px;'>
+                                    <p style='font-size:20px;margin-right:40px;margin-left:20px;color:#7c7cff'><b>Graduated</b></p>
+                                    <p style='font-size:20px;color:red'>$resultSql->yearleft </p>
+                                </div>
+                                        ";
+                                }
+                                ?>
                                 <?php
 
                                 if ($resultSql->transferred == '1') {
@@ -386,6 +398,9 @@ $pimage = $resultSql->img;
 
         switch (info.type) {
             case 'transfer':
+                location.reload();
+                break;
+            case 'leave':
                 location.reload();
                 break;
             case 'delete':

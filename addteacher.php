@@ -428,7 +428,7 @@
         data.langu = languages
 
         sendData(data, "addTeacher");
-        alert(JSON.stringify(data))
+        // alert(JSON.stringify(data))
        
 
     }

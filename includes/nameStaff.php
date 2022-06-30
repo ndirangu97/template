@@ -13,15 +13,31 @@ $results=$DB->read($sql,[]);
 if (is_array($results)) {
     foreach ($results as $row) {
         $mess.="
-        <a href='./moreStaff.php?uid=$row->userid' style='text-decoration:none;color:inherit'>
-        <div class='card'>
+        <a href='morestaff.php?id=$row->userid' style='text-decoration:none;color:inherit'>
+        <div class='card' style='
+        display: flex;
+        align-items: stretch;
+        justify-content: stretch;
+        margin-right: 12px;
+        margin-bottom: 10px;
+        max-height:130px !important ;
+      '>
+    <div style='display: flex; margin: 4px 6px'>
+      <div>
         <img src='$row->img' style='width: 100px; height: 100px; border-radius: 50%' />
-        <div class='container'>
-          <p><b>$row->name</b> </p>
-          <p>ICT senetor</p>
-        </div>
+      </div>
+      <div style='
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+          '>
+          <p style='font-size: 18px'>$row->name</p>
+          <p style='font-size: 18px;color:#b4e334'>Dept : $row->department</p>
+      </div>
     </div>
-        </a>
+  </div>
+  </a>
         ";
     }
    

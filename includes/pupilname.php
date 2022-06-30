@@ -89,7 +89,7 @@ if ($DATA_OBJECT->chaser=="") {
               flex-direction: column;
             '>
           <p style='font-size: 18px'>$row->name</p>
-          <p>$row->class $row->stream</p>
+          <p>Graduated $row->yearleft</p>
         </div>
       </div>
     </div>
@@ -141,7 +141,7 @@ if ($DATA_OBJECT->chaser=="") {
               flex-direction: column;
             '>
           <p style='font-size: 18px'>$row->name</p>
-          <p>$row->class $row->stream</p>
+          <p>Transferred $row->yeartransferred</p>
         </div>
       </div>
     </div>

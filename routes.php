@@ -101,6 +101,11 @@ elseif (isset($DATA_OBJECT->type) && $DATA_OBJECT->type == "leave") {
  
   
 }
+elseif (isset($DATA_OBJECT->type) && $DATA_OBJECT->type == "setsal") {
+  include "./setsalary.php";
+ 
+  
+}
 
 
 

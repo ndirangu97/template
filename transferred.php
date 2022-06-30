@@ -90,7 +90,7 @@ $pg=$_GET['pg'];
                   flex-direction: column;
                 '>
               <p style='font-size: 18px'>$row->name</p>
-              <p>$row->class $row->stream</p>
+              <p>Transferred $row->yeartransferred</p>
             </div>
           </div>
         </div>
